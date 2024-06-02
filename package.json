@@ -1,0 +1,22 @@
+{
+  "name": "top",
+  "version": "1.0.0",
+  "description": "awplanet",
+  "main": "35068116dca29323421b7897ba08b599.js",
+  "scripts": {
+    "test": "20363fb4-c37a-4980-bb3f-3486057eac12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertasAiksteinas/aw.git"
+  },
+  "keywords": [
+    "dev"
+  ],
+  "author": "nagiv",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlbertasAiksteinas/aw/issues"
+  },
+  "homepage": "https://github.com/AlbertasAiksteinas/aw#readme"
+}

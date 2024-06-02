@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | AWplanet-ClientGL</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" style="position: absolute; top: 0;left: 0; width: 100%; height: 100%; background: #000000";></canvas>
+    <div id="progressbar" style="position: absolute; top: 0;left: 0; width: 100%; height: 20; background: #007F7F; text-align: left";><font color=#FFFF00>Download...</font></div>
+    <script>
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/35068116dca29323421b7897ba08b599.js";
+      var config = {
+        dataUrl: buildUrl + "/1014ad1d9fa1f71a75f52615bdb21e23.data.unityweb",
+        frameworkUrl: buildUrl + "/c88e2fcaacba440dc27901a875b85ffd.js.unityweb",
+        codeUrl: buildUrl + "/411ec85de7d2ba0fc889b02084506be1.wasm.unityweb",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "awGroup",
+        productName: "AWplanet-ClientGL",
+        productVersion: "1.0",
+      };
+      var canvas = document.querySelector("#unity-canvas");
+      var progressbar = document.querySelector("#progressbar");
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressbar.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+	  progressbar.style.display = "none";
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  </body>
+</html>
